@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.html {
+    font-size: 62.5%;
+}
+
+a {
+    text-decoration: none;
+ 
+}
+
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+:root {
+font-family: 'Nunito', sans-serif;
+    --bg-color: #ede2f280;
+    --sub-color: #495579;
+    --button-color: #263159;
+    --h1-color: #251749;
+    --white-color: #ffffff;
+    --dark-color: #202D41;
+    --darker-color: #1B2637;
+    --g-text: #FFD700;
+    --btn-bg: #c70039;
+    --green:#00715D;
+    --yellow:#FBD45A;
+    --white-color:#ffffff;
+     --hover-color:#596FB7;
+
+
+    
+        --lightgreen1: #a4bdb7;
+        --brown: #8b4448;
+        --gray: gray;
+        --lightgreen2: rgb(164, 189, 183, 0.5);
+        --box: #ededed;
+        --hibiscus-love: #fc465c;
+            --fine-ii: #f9b198;
+            --afl: #fac8af;
+            --mexican-sky: #cfdddd;
+            --brasillia-peach: #facb85;
+            --free: #33032d;
+            --captured: #2b2120;
+        
+            --primary-color: var(--brasillia-peach);
+            --secondary-color: var(--hibiscus-love);
+            --tertiary-color: var(--fine-ii);
+            --quadrary-color: var(--afl);
+            --bg-color: var(--mexican-sky);
+            --text-color: var(--free);
+            --header-color: var(--captured);
+            --error-color: var(--hibiscus-love);
+            --success-color: #73d12e;
+}

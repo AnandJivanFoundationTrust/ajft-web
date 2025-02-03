@@ -1,0 +1,65 @@
+---
+import Header from "../layouts/Header.astro";
+import EventCard from "../components/EventCard.astro";
+import Bg from "../assets/bg.jpg";
+import EventCarousel from "../components/EventCarousel.astro";
+---
+
+<Header route="Events">
+  <main>
+    <div class="container">
+      <div class="heading">
+        <h1>Empowering Communities: Join Our Humanitarian Events</h1>
+        <p>
+          Explore our impactful community events aimed at creating positive
+          change. From initiatives supporting education to aiding the
+          underserved with essential nourishment, our events are designed to
+          uplift lives. Engage with us as we work towards a brighter, more
+          equitable future for all. Join our cause and contribute to building a
+          compassionate and supportive society.
+        </p>
+      </div>
+      <EventCarousel />
+    </div>
+  </main>
+</Header>
+
+<style>
+  main {
+    background-image: url(../assets/bg-7.png);
+    padding: 4rem 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .heading {
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 800;
+      padding: 1rem;
+    }
+    p {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 600;
+      padding: 1rem;
+    }
+  }
+  @media (max-width: 750px) {
+    .heading {
+      h1 {
+        padding: 0.5rem;
+        text-align: left;
+      }
+      p {
+        padding: 0.5rem;
+        text-align: justify;
+      }
+    }
+  }
+</style>

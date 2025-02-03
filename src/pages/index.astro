@@ -1,0 +1,26 @@
+---
+import Gallery from "../components/Gallery.astro";
+import Vission from "../components/SliderMain.astro";
+import HeroSection from "../components/SliderMain.astro";
+import Tab from "../components/Tab.astro";
+import Layout from "../layouts/Layout.astro";
+import Zipper from "../components/Zipper.astro";
+import Helping from "../assets/helping.jpg";
+import Herotest from "../components/Herotest.astro";
+import Carousel from "../components/Carousel.astro";
+import H from "../components/H.astro";
+---
+
+<Layout title="Anand Jivan Foundation Trust">
+  <H />
+
+  <Zipper
+    Heading="Helping each other can make world Better"
+    Description="Preventing sexual exploitation of boys/Girls,to stop the evil practice of child Labour, to free children from child labour and to work for their rehabilitation, education, their all-round development and to run a campaign to provide them legal rights. "
+    ImagePath={Helping}
+    Reverse
+  />
+  <!-- <Carousel /> -->
+
+  <Tab />
+</Layout>

@@ -1,0 +1,56 @@
+---
+import Layout from "../layouts/Layout.astro";
+interface Props {
+  route: string;
+}
+const { route } = Astro.props;
+---
+
+<Layout title="Anand Jivan Foundation Trust">
+  <main>
+    <div class="container">
+      <div class="header">
+        <p>Anand Jivan Foundation Trust / <span>{route}</span></p>
+        <h1>{route}</h1>
+      </div>
+      <div class="main-content">
+        <slot />
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  main {
+    /* padding-top: 3rem; */
+  }
+  .header {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(../assets/headerbg.jpeg);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+  }
+  .header h1 {
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: 0.5px;
+    color: white;
+  }
+
+  .header span {
+    color: var(--yellow);
+  }
+</style>

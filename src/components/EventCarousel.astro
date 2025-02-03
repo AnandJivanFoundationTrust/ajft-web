@@ -1,0 +1,361 @@
+---
+import { Image } from "astro:assets";
+import ClockIcon from "../assets/clock.svg";
+import LocationIcon from "../assets/location.svg";
+import Calender from "../assets/calender.svg";
+---
+
+<div class="event-carousel">
+  <div class="carousel-wrapper">
+    <span id="item-1"></span>
+    <span id="item-2"></span>
+    <span id="item-3"></span>
+    <span id="item-4"></span>
+    <div class="carousel-item item-1">
+      <a href="#item-4" class="arrow-prev arrow"></a>
+      <div class="content">
+        <div class="left1"></div>
+        <div class="right1">
+          <div class="event-container">
+            <div class="event-details">
+              <h2 class="event-title">Stationary Distribution(Books)</h2>
+              <p class="event-description">
+                We're thrilled to share the joy of our recent endeavor where we
+                distributed books to those in need within our community. At
+                Anand Jivan Foundation Trust, we believe in the transformative
+                power of education and knowledge.
+              </p>
+              <ul class="details-list">
+                <li>
+                  <div>
+                    <Image src={ClockIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>December 31, 2023</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={LocationIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>10:00 AM - 2:00 PM</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={Calender} alt="" height={24} width={24} />
+                  </div>
+                  <p>Venue Name, City, Country</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#item-2" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-2">
+      <a href="#item-1" class="arrow-prev arrow"></a>
+      <div class="content">
+        <div class="left2"></div>
+        <div class="right2">
+          <div class="event-container">
+            <div class="event-details">
+              <h2 class="event-title">Blanket Distribution</h2>
+              <p class="event-description">
+                We're thrilled to share the joy of our recent endeavor where we
+                distributed books to those in need within our community. At
+                Anand Jivan Foundation Trust, we believe in the transformative
+                power of education and knowledge.
+              </p>
+              <ul class="details-list">
+                <li>
+                  <div>
+                    <Image src={ClockIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>December 31, 2023</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={LocationIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>10:00 AM - 2:00 PM</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={Calender} alt="" height={24} width={24} />
+                  </div>
+                  <p>Venue Name, City, Country</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#item-3" class="arrow-next arrow"></a>
+    </div>
+    <div class="carousel-item item-3">
+      <a href="#item-2" class="arrow-prev arrow"></a>
+      <div class="content">
+        <div class="left3"></div>
+        <div class="right3">
+          <div class="event-container">
+            <div class="event-details">
+              <h2 class="event-title">Stationary Distribution(Books)</h2>
+              <p class="event-description">
+                We're thrilled to share the joy of our recent endeavor where we
+                distributed books to those in need within our community. At
+                Anand Jivan Foundation Trust, we believe in the transformative
+                power of education and knowledge.
+              </p>
+              <ul class="details-list">
+                <li>
+                  <div>
+                    <Image src={ClockIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>December 31, 2023</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={LocationIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>10:00 AM - 2:00 PM</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={Calender} alt="" height={24} width={24} />
+                  </div>
+                  <p>Venue Name, City, Country</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#item-4" class="arrow-next arrow"></a>
+    </div>
+
+    <div class="carousel-item item-4">
+      <a href="#item-3" class="arrow-prev arrow"></a>
+      <div class="content">
+        <div class="left4"></div>
+        <div class="right4">
+          <div class="event-container">
+            <div class="event-details">
+              <h2 class="event-title">Stationary Distribution(Books)</h2>
+              <p class="event-description">
+                We're thrilled to share the joy of our recent endeavor where we
+                distributed books to those in need within our community. At
+                Anand Jivan Foundation Trust, we believe in the transformative
+                power of education and knowledge.
+              </p>
+              <ul class="details-list">
+                <li>
+                  <div>
+                    <Image src={ClockIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>December 31, 2023</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={LocationIcon} alt="" height={24} width={24} />
+                  </div>
+                  <p>10:00 AM - 2:00 PM</p>
+                </li>
+                <li>
+                  <div>
+                    <Image src={Calender} alt="" height={24} width={24} />
+                  </div>
+                  <p>Venue Name, City, Country</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#item-1" class="arrow-next arrow"></a>
+    </div>
+  </div>
+</div>
+
+<style>
+  main {
+  }
+
+  .carousel-wrapper {
+    height: 400px;
+    position: relative;
+    width: 100%;
+    display: block;
+    margin: 50px auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 10px;
+
+    /* border-radius: 10px; */
+  }
+  .content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    border-radius: 10px;
+  }
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* padding: 25px 50px; */
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+  }
+  .left1 {
+    flex: 1;
+    opacity: 1;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../assets/headerbg.jpeg");
+    background-size: cover;
+  }
+  .left2 {
+    flex: 1;
+    opacity: 1;
+    background-image: url("../assets/blanletevent.JPG");
+    background-size: cover;
+  }
+  .left3 {
+    flex: 1;
+    opacity: 1;
+    background-image: url("../assets/book.JPG");
+    background-size: cover;
+  }
+  .left4 {
+    flex: 1;
+    opacity: 1;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url("../assets/ration.jpeg");
+    background-size: cover;
+  }
+
+  .arrow {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 4px;
+  }
+  .arrow-prev {
+    left: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+  }
+  .arrow-next {
+    right: 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  [id^="item"] {
+    display: none;
+  }
+  .item-1 {
+    z-index: 2;
+    opacity: 1;
+  }
+  .item-2 {
+  }
+  .item-3 {
+  }
+
+  *:target ~ .item-1 {
+    opacity: 0;
+  }
+  #item-1:target ~ .item-1 {
+    opacity: 1;
+  }
+  #item-2:target ~ .item-2,
+  #item-3:target ~ .item-3,
+  #item-4:target ~ .item-4 {
+    z-index: 3;
+    opacity: 1;
+  }
+  .event-container {
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .event-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .event-description {
+    font-size: 18px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+
+  .details-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .details-list li {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 0.5rem;
+  }
+
+  .right1 {
+    flex: 1;
+    background-color: #c1f2b0;
+    padding: 2rem;
+  }
+  .right2 {
+    flex: 1;
+    background-color: #8adab2;
+    padding: 2rem;
+  }
+  .right3 {
+    flex: 1;
+    background-color: #9ade7b;
+    padding: 2rem;
+  }
+  .right4 {
+    flex: 1;
+    background-color: #d2e3c8;
+    padding: 2rem;
+  }
+  @media (max-width: 700px) {
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+    .carousel-wrapper {
+      height: 100vh;
+
+      border-radius: 0;
+    }
+    .content {
+      border-radius: 0;
+    }
+  }
+</style>

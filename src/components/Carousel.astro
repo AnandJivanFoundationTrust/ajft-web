@@ -1,0 +1,452 @@
+---
+let url = "https://inventory.zpaisa.com/login";
+---
+
+<script
+  src="https://cdn.zpaisa.comhttps://unpkg.com/swiper@8/swiper-bundle.min.js"
+></script>
+
+<!-- CARD STARTS HERE -->
+<div
+  id="myDIV"
+  style="padding: 4rem 0 1rem 0; width: 80%; margin: 0 auto; text-align: center;"
+>
+  <button id="btn1" class="swipe-btn active" onclick="loadDoc(0)"
+    >Boost your Sale</button
+  >
+  <button id="btn2" class="swipe-btn" onclick="loadDoc(1)"
+    >Manage Finances</button
+  >
+  <button id="btn3" class="swipe-btn" onclick="loadDoc(2)"
+    >Smart Business</button
+  >
+</div>
+<div class="swiper mySwiper swipe-table">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <!-- <div style="background-color: #f7f7f7;">side 1</div> -->
+      <div class="flexbox">
+        <div class="box-1">
+          <img
+            src="https://cdn.zpaisa.com/assets/svgs/carousel-1.svg"
+            width="400"
+            height="400"
+            loading="lazy"
+            alt="Imprive efficiency & sell more"
+          />
+        </div>
+        <div class="box-2">
+          <div class="info">
+            <div class="info-right">
+              <span>Imporve Efficiency & Sell More</span>
+            </div>
+          </div>
+
+          <div class="info-right-desc">
+            You will never run out of stock with accurate inventory tracking.
+            Complete control on dynamic MRP, discounts customizable against each
+            customers.
+          </div>
+          <div style="display: flex; padding-left: 1.2rem; padding-top: 0.8rem">
+            <a href="/" class="read-more-btn">
+              <span> Read More</span>
+            </a>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Prevent overstock and outages "
+              />
+            </div>
+            <div class="info-bullet-right">Prevent overstock and outages</div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Provides real-time access to data"
+              />
+            </div>
+            <div class="info-bullet-right">
+              Provides real-time access to data
+            </div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Forecasts demand"
+              />
+            </div>
+            <div class="info-bullet-right">Forecasts demand</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="flexbox">
+        <div class="box-1">
+          <img
+            src="https://cdn.zpaisa.com/assets/svgs/accounts.svg"
+            width="400"
+            height="400"
+            loading="lazy"
+            alt="Readily Available Financial Reports"
+          />
+        </div>
+        <div class="box-2">
+          <div class="info">
+            <div class="info-right">
+              <span>Readily Available Financial Reports</span>
+            </div>
+          </div>
+
+          <div class="info-right-desc">
+            Get detailed insights on your finances (payables & receivables).
+            Know your customers oustanding balances and invoice details.
+          </div>
+          <div style="display: flex; padding-left: 1.2rem; padding-top: 0.8rem">
+            <a href="/" class="read-more-btn">
+              <span> Read More</span>
+            </a>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Always upto date - Customer Accounts Statements "
+              />
+            </div>
+            <div class="info-bullet-right">
+              Always upto date - Customer Accounts Statements
+            </div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Export financial data for Auditing"
+              />
+            </div>
+            <div class="info-bullet-right">
+              Export financial data for Auditing
+            </div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Reduce human error "
+              />
+            </div>
+            <div class="info-bullet-right">Reduce human error</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div class="flexbox">
+        <div class="box-1">
+          <img
+            src="https://cdn.zpaisa.com/assets/svgs/smart-business.svg"
+            width="400"
+            height="400"
+            loading="lazy"
+            alt="Choose the right software for your business"
+          />
+        </div>
+        <div class="box-2">
+          <div class="info">
+            <div class="info-right">
+              <span>Choose the right software for your business</span>
+            </div>
+          </div>
+
+          <div class="info-right-desc">
+            Every business small or big demands unique requiremts. say no to
+            generic sofwares and use software designed for your industry /
+            business.
+          </div>
+          <div style="display: flex; padding-left: 1.2rem; padding-top: 0.8rem">
+            <a href="/" class="read-more-btn">
+              <span> Read More</span>
+            </a>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Cloud Softwre or On Premisis software as per your need."
+              />
+            </div>
+            <div class="info-bullet-right">
+              Cloud Softwre or On Premisis software as per your need.
+            </div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="ZPAISA is made for Traders "
+              />
+            </div>
+            <div class="info-bullet-right">
+              ZPAISA is made for Traders / Retailers / Wholesalers /
+              Distributors
+            </div>
+          </div>
+
+          <div class="info-bullet">
+            <div class="info-bullet-left">
+              <img
+                src="https://cdn.zpaisa.com/assets/pngs/check.png"
+                width="23"
+                height="36"
+                loading="lazy"
+                alt="Get ahead of competition"
+              />
+            </div>
+            <div class="info-bullet-right">Get ahead of competition</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<style lang="scss">
+  @use "../styles/abstracts/index.scss" as *;
+
+  .swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: rgb(203, 246, 203);
+
+    /* Center slide text vertically */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .flexbox {
+    display: flex;
+    background-color: #f7f7f7;
+    width: 100%;
+
+    flex-wrap: wrap;
+
+    @include lg {
+      flex-direction: column;
+    }
+  }
+  .box-1 {
+    flex: 0 0 400px;
+  }
+  .box-2 {
+    flex: 1;
+    padding: 0 1rem;
+    padding-bottom: 1.2rem;
+  }
+
+  /* .swipe-btn {
+		border: none;
+		background: none;
+	} */
+
+  .selected {
+    border-bottom: 2px solid red;
+  }
+
+  .swipe-btn {
+    border: none;
+    outline: none;
+    background-color: var(--white-color);
+    margin: 0 0.5rem;
+
+    font-size: var(--fs-s1);
+    color: var(--primary-font-color-a3);
+    font-weight: var(--fw-c);
+  }
+
+  /* Style the active class, and buttons on mouse-over */
+  .active,
+  .swipe-btn:hover {
+    cursor: pointer;
+    color: var(--primary-font-color);
+    border-bottom: 2px solid var(--primary-font-color-a4);
+  }
+
+  .info {
+    display: flex;
+    padding: 1rem 1rem 0 1rem;
+  }
+  .info-left {
+    width: 80px;
+  }
+  .info-right {
+    padding-left: 0.2rem;
+    font-size: clamp(1.2rem, 1.4rem, 1.6rem);
+    width: 100%;
+    display: flex;
+  }
+
+  .info-right-desc {
+    font-size: 0.7rem;
+    text-align: left;
+    color: var(--gray-d3);
+    padding-left: 1.2rem;
+  }
+
+  .read-more-btn {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--primary-brand-color);
+    background-color: var(--secondary-brand-color);
+    padding: 0.3rem 0.7rem;
+    width: fit-content;
+    border-radius: 25px;
+    margin-bottom: 10px;
+  }
+
+  .info-bullet {
+    display: flex;
+    padding: 1rem 1rem 0 1rem;
+    min-height: 3rem;
+  }
+  .info-bullet-left {
+    width: 24px;
+  }
+  .info-bullet-right {
+    padding-left: 0.5rem;
+    font-size: 0.825rem;
+    width: 100%;
+    display: flex;
+    text-align: left;
+  }
+
+  .swipe-table {
+    width: 80%;
+  }
+
+  .swipe-table:hover {
+    cursor: grab;
+  }
+</style>
+
+<script type="module">
+  import Swiper from "https://unpkg.com/swiper@8/swiper-bundle.esm.browser.min.js";
+
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    centeredSlides: true,
+
+    pagination: {
+      el: ".swiper-pagination",
+      type: "bullets",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
+  swiper.on("slideChange", function () {
+    console.log("slide changed" + swiper.activeIndex);
+    // var header = document.getElementById("myDIV");
+    // var btns = header.getElementsByClassName("swipe-btn");
+    // btns[3].click();
+
+    document.getElementById(`btn${swiper.activeIndex + 1}`).click();
+
+    loadDoc(swiper.activeIndex);
+  });
+
+  test = swiper;
+
+  // swiper.on("click", function (swiper, event) {
+  // 	console.log("slide click");
+  // });
+</script>
+
+<script is:inline>
+  var test;
+  function loadDoc(idx) {
+    //	test22();
+    console.log("ss");
+    test.slideTo(idx, 500, false);
+  }
+  // document.getElementById("myCheck").click();
+  window.onload = function () {
+    // or window.addEventListener("load",function() {
+
+    test22();
+  };
+
+  function test22() {
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("myDIV");
+    var btns = header.getElementsByClassName("swipe-btn");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  }
+</script>

@@ -1,0 +1,253 @@
+---
+import { Image } from "astro:assets";
+import TabCard from "./TabCard.astro";
+import tabImage1 from "../assets/vission.jpg";
+import tabImage2 from "../assets/mission.jpg";
+import Founder from "../assets/founder.jpg";
+import EventImage from "../assets/event-tab.png";
+
+import FiveinOne from "../Assets/homepageimg/tabscreenimg/5in1img.png";
+---
+
+<div class="container">
+  <div class="tabs-container">
+    <div>
+      <section class="tab-links">
+        <div class="tabs">
+          <div class="tab active" onclick="changeTab(event, 'tab1')">
+            Vission
+          </div>
+          <div class="tab" onclick="changeTab(event, 'tab2')">Mission</div>
+          <div class="tab" onclick="changeTab(event, 'tab3')">Founder</div>
+          <div class="tab" onclick="changeTab(event,  'tab4')">Events</div>
+        </div>
+      </section>
+    </div>
+    <div class="tabscreen">
+      <div id="tab1" class="tab-content">
+        <TabCard
+          title="Vission"
+          content="Our Vission is to serve the society in the field of Education, Health Care and Food provision to the needy people. Women Empowerment and Employment for skilled person. Skill development program the Digital Education, provides an opportunity to learners/donors to prepare for primary education and higher education  by availing scholarships from our AJF Trust for meritorious student."
+          readMore="Read More About Portal-Free Sourcing"
+          imagePath={tabImage1}
+          name="Roger"
+          work="Web Developer"
+        />
+      </div>
+
+      <div id="tab2" class="tab-content" style="display:none">
+        <TabCard
+          title="Mission"
+          content="Our Mission is to serve the society in the field of Education, Health Care and Food provision to the needy people. Women Empowerment and Employment for skilled person. Skill development program the Digital Education, provides an opportunity to learners/donors to prepare for primary education and higher education  by availing scholarships from our AJF Trust for meritorious student."
+          readMore="Read More About Interview Management"
+          imagePath={tabImage2}
+          name="Roger"
+          work="Web Developer"
+        />
+      </div>
+
+      <div id="tab3" class="tab-content" style="display:none">
+        <TabCard
+          title="Founder"
+          content="I was born in a farmer's house and left for education, but now I want to return to my village in Bihar. Many families there still struggle to educate their children due to financial difficulties, contributing to Bihar's ongoing backwardness. It's vital for us, along with the government, to unite and support this campaign to help Bihar progress."
+          readMore="Read More About Candidate Retrivel"
+          imagePath={Founder}
+          name="Roger"
+          work="Web Developer"
+        />
+      </div>
+
+      <div id="tab4" class="tab-content" style="display:none">
+        <TabCard
+          title="Events"
+          content="Explore our impactful community events aimed at creating positive change. From initiatives supporting education to aiding the underserved with essential nourishment, our events are designed to uplift lives."
+          readMore="Read More About Candidate Optimization"
+          imagePath={EventImage}
+          name="Roger"
+          work="Web Developer"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mob-container">
+  <div class="tab-items">
+    <TabCard
+      heading="Vission"
+      content="AOur Vission is to serve the society in the field of Education, Health Care and Food provision to the needy people. Women Empowerment and Employment for skilled person. Skill development program the Digital Education, provides an opportunity to learners/donors to prepare for primary education and higher education  by availing scholarships from our AJF Trust for meritorious student."
+      imagePath={tabImage1}
+    />
+
+    <TabCard
+      heading="Mission"
+      content="Our Mission is to serve the society in the field of Education, Health Care and Food provision to the needy people. Women Empowerment and Employment for skilled person. Skill development program the Digital Education, provides an opportunity to learners/donors to prepare for primary education and higher education  by availing scholarships from our AJF Trust for meritorious student."
+      imagePath={tabImage2}
+    />
+    <TabCard
+      heading="Founder"
+      content="I was born in a farmer's house and left for education, but now I want to return to my village in Bihar. Many families there still struggle to educate their children due to financial difficulties, contributing to Bihar's ongoing backwardness. It's vital for us, along with the government, to unite and support this campaign to help Bihar progress."
+      imagePath={Founder}
+    />
+    <TabCard
+      heading="Events"
+      content="A collaborative platform for preferred vendors improves communication efficiency."
+      imagePath={EventImage}
+    />
+  </div>
+</div>
+
+<style>
+  .container {
+    background-color: #f2f4f4;
+    padding: 5rem 0;
+  }
+  .tabs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .heding-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  .right-img {
+    flex: 1;
+    padding: 1rem;
+  }
+  .left-text p {
+    padding: 0 2rem;
+    font-size: 1.5rem;
+  }
+  .fiveinone-img {
+    height: auto;
+    width: 300px;
+  }
+  .tabscreen {
+    margin-top: 3rem;
+    /* border-radius: 10px; */
+  }
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    padding: 0.5rem;
+  }
+  .tab-links {
+    border-bottom: 1px solid #d2d5d9;
+  }
+
+  .tab:hover {
+    scale: 1.05;
+    transition:
+      opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+      scale 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .tab {
+    margin-right: 20px;
+    padding: 10px 20px;
+    color: #202d41;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .tab.active {
+    transform: scale(1.1);
+  }
+  .tab::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background-color: #00715d;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  .tab.active::after {
+    transform: scaleX(1);
+  }
+  .mob-container {
+    display: none;
+  }
+
+  @media (max-width: 900px) {
+    .tabs {
+      gap: 0.5rem;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      background-color: #f2f4f4;
+      padding: 1rem 0;
+    }
+    .tab::after {
+      display: none;
+    }
+    .tabs-container {
+      display: none;
+    }
+    .mob-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .tab-items {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    .heding-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0.5rem;
+      width: 100%;
+      gap: 1rem;
+    }
+    .right-img {
+      flex: 1;
+      padding: 0;
+    }
+    .left-text p {
+      padding: 0;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  }
+  @media (max-width: 1100px) {
+    .tabs {
+      gap: 1rem;
+    }
+  }
+</style>
+
+<script is:inline>
+  function changeTab(event, tabId) {
+    let tabcontent = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    let tablinks = document.getElementsByClassName("tab");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    document.getElementById(tabId).style.display = "block";
+    event.currentTarget.className += " active";
+  }
+</script>

@@ -1,0 +1,22 @@
+<main>
+  <div class="copyrighttext">
+    <p>
+      Copyright &copy <span id="copyright"></span> Anand Jivan Foundation Trust.
+      All rights reserved.
+    </p>
+  </div>
+</main>
+<script>
+  document.querySelector("#copyright")!.textContent = new Date()
+    .getFullYear()
+    .toString();
+</script>
+
+<style>
+  .copyrighttext {
+    text-align: center;
+    padding: 1rem;
+    color: rgb(202, 200, 200);
+    background-color: #1b2637;
+  }
+</style>

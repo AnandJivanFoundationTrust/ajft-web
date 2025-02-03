@@ -1,0 +1,352 @@
+---
+import { Image } from "astro:assets";
+
+import Vone from "../assets/V1.jpg";
+import Vtwo from "../assets/V2.jpg";
+import Vthree from "../assets/V3.jpg";
+import Vfour from "../assets/V4.jpg";
+import Vfive from "../assets/V5.jpg";
+import Instagram from "../assets/instagram.svg";
+import FaceBook from "../assets/facebook.svg";
+import Twitter from "../assets/twitter.svg";
+---
+
+<!-- hh -->
+<div class="main-box">
+  <div class="heading">
+    <p>Our expert team</p>
+    <h1>Meet The Team Behind Our Success</h1>
+  </div>
+
+  <main>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carousel">
+        <li class="card">
+          <div class="img">
+            <Image src={Vone} alt="img" draggable="false" />
+          </div>
+          <div class="details">
+            <h2>Mr. Arjun Gurung</h2>
+            <span>Volunteer</span>
+            <div class="links">
+              <a href=""> <Image src={Instagram} alt="" /></a>
+              <a href=""> <Image src={FaceBook} alt="" /></a>
+              <a href=""> <Image src={Twitter} alt="" /></a>
+              <!-- <a href=""> <Image src={Instagram} alt="" /></a> -->
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="img">
+            <Image src={Vtwo} alt="img" draggable="false" />
+          </div>
+          <div class="details">
+            <h2>Mr. Subodh Pandit</h2>
+            <span>Volunteer</span>
+            <div class="links">
+              <a href=""> <Image src={Instagram} alt="" /></a>
+              <a href=""> <Image src={FaceBook} alt="" /></a>
+              <a href=""> <Image src={Twitter} alt="" /></a>
+              <!-- <a href=""> <Image src={Instagram} alt="" /></a> -->
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="img">
+            <Image src={Vthree} alt="img" draggable="false" />
+          </div>
+          <div class="details">
+            <h2>Mr. Siddhu Kumar</h2>
+            <span>Volunteer</span>
+            <div class="links">
+              <a href=""> <Image src={Instagram} alt="" /></a>
+              <a href=""> <Image src={FaceBook} alt="" /></a>
+              <a href=""> <Image src={Twitter} alt="" /></a>
+              <!-- <a href=""> <Image src={Instagram} alt="" /></a> -->
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="img">
+            <Image src={Vfour} alt="img" draggable="false" />
+          </div>
+          <div class="details">
+            <h2>Mr. Paras Kumar</h2>
+            <span>Volunteer</span>
+            <div class="links">
+              <a href=""> <Image src={Instagram} alt="" /></a>
+              <a href=""> <Image src={FaceBook} alt="" /></a>
+              <a href=""> <Image src={Twitter} alt="" /></a>
+              <!-- <a href=""> <Image src={Instagram} alt="" /></a> -->
+            </div>
+          </div>
+        </li>
+        <li class="card">
+          <div class="img">
+            <Image src={Vfive} alt="img" draggable="false" />
+          </div>
+          <div class="details">
+            <h2>Mr. Pintu Kumar</h2>
+            <span>Volunteer</span>
+            <div class="links">
+              <a href=""> <Image src={Instagram} alt="" /></a>
+              <a href=""> <Image src={FaceBook} alt="" /></a>
+              <a href=""> <Image src={Twitter} alt="" /></a>
+              <!-- <a href=""> <Image src={Instagram} alt="" /></a> -->
+            </div>
+          </div>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+  </main>
+</div>
+<style>
+  .main-box {
+  }
+  .heading {
+    text-align: center;
+    line-height: 32px;
+    padding: 2rem 0;
+  }
+  .heading p {
+    font-weight: 700;
+    color: var(--yellow);
+  }
+  .heading h1 {
+    color: var(--green);
+  }
+  main {
+    display: flex;
+    padding: 0 35px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--lightgreen2);
+    width: 100%;
+  }
+  .wrapper {
+    max-width: 1100px;
+    width: 100%;
+    position: relative;
+  }
+  .wrapper i {
+    top: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    background: var(--yellow);
+    border-radius: 50%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+  }
+  .wrapper i:active {
+    transform: translateY(-50%) scale(0.85);
+  }
+  .wrapper i:first-child {
+    left: -22px;
+  }
+  .wrapper i:last-child {
+    right: -22px;
+  }
+  .wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 3) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel.no-transition {
+    scroll-behavior: auto;
+  }
+  .carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+  }
+  .carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .carousel .card {
+    scroll-snap-align: start;
+    min-height: 350px;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    /* padding-bottom: 15px; */
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 1.5rem 0;
+  }
+  .carousel .card .img {
+    background: var(--yellow);
+    height: 210px;
+    width: 210px;
+    /* border-radius: 50%; */
+  }
+  .card .img img {
+    width: 200px;
+    height: 260px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+    object-position: center;
+    border: 4px solid #fff;
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .links a {
+    padding: 0.8rem;
+
+    border: 1px solid var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .links a:hover {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  @media screen and (max-width: 900px) {
+    .wrapper .carousel {
+      grid-auto-columns: calc((100% / 2) - 9px);
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .wrapper .carousel {
+      grid-auto-columns: 100%;
+    }
+  }
+</style>
+
+<script is:inline>
+  const wrapper = document.querySelector(".wrapper");
+  const carousel = document.querySelector(".carousel");
+  const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+  const arrowBtns = document.querySelectorAll(".wrapper i");
+  const carouselChildrens = [...carousel.children];
+
+  let isDragging = false,
+    isAutoPlay = true,
+    startX,
+    startScrollLeft,
+    timeoutId;
+
+  // Get the number of cards that can fit in the carousel at once
+  let cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
+
+  // Insert copies of the last few cards to beginning of carousel for infinite scrolling
+  carouselChildrens
+    .slice(-cardPerView)
+    .reverse()
+    .forEach((card) => {
+      carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
+
+  // Insert copies of the first few cards to end of carousel for infinite scrolling
+  carouselChildrens.slice(0, cardPerView).forEach((card) => {
+    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+  });
+
+  // Scroll the carousel at appropriate postition to hide first few duplicate cards on Firefox
+  carousel.classList.add("no-transition");
+  carousel.scrollLeft = carousel.offsetWidth;
+  carousel.classList.remove("no-transition");
+
+  // Add event listeners for the arrow buttons to scroll the carousel left and right
+  arrowBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      carousel.scrollLeft +=
+        btn.id == "left" ? -firstCardWidth : firstCardWidth;
+    });
+  });
+
+  const dragStart = (e) => {
+    isDragging = true;
+    carousel.classList.add("dragging");
+    // Records the initial cursor and scroll position of the carousel
+    startX = e.pageX;
+    startScrollLeft = carousel.scrollLeft;
+  };
+
+  const dragging = (e) => {
+    if (!isDragging) return; // if isDragging is false return from here
+    // Updates the scroll position of the carousel based on the cursor movement
+    carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+  };
+
+  const dragStop = () => {
+    isDragging = false;
+    carousel.classList.remove("dragging");
+  };
+
+  const infiniteScroll = () => {
+    // If the carousel is at the beginning, scroll to the end
+    if (carousel.scrollLeft === 0) {
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.scrollWidth - 2 * carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+    }
+    // If the carousel is at the end, scroll to the beginning
+    else if (
+      Math.ceil(carousel.scrollLeft) ===
+      carousel.scrollWidth - carousel.offsetWidth
+    ) {
+      carousel.classList.add("no-transition");
+      carousel.scrollLeft = carousel.offsetWidth;
+      carousel.classList.remove("no-transition");
+    }
+
+    // Clear existing timeout & start autoplay if mouse is not hovering over carousel
+    clearTimeout(timeoutId);
+    if (!wrapper.matches(":hover")) autoPlay();
+  };
+
+  const autoPlay = () => {
+    if (window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
+    // Autoplay the carousel after every 2500 ms
+    timeoutId = setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500);
+  };
+  autoPlay();
+
+  carousel.addEventListener("mousedown", dragStart);
+  carousel.addEventListener("mousemove", dragging);
+  document.addEventListener("mouseup", dragStop);
+  carousel.addEventListener("scroll", infiniteScroll);
+  wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
+  wrapper.addEventListener("mouseleave", autoPlay);
+</script>

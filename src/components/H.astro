@@ -1,0 +1,279 @@
+---
+import { Image } from "astro:assets";
+import We from "../assets/We.jpg";
+import Cl from "../assets/Cl.jpg";
+import Hc from "../assets/Hc.jpg";
+import Ed from "../assets/Ed.jpg";
+import EducationImg from "../assets/education.jpeg";
+import Fl from "../assets/Fl.jpg";
+---
+
+<section aria-label="Newest Photos">
+  <div class="carousel" data-carousel>
+    <button class="carousel-button prev" data-carousel-button="prev"
+      >&#x3C;</button
+    >
+    <button class="carousel-button next" data-carousel-button="next"
+      >&#x3E;</button
+    >
+    <ul data-slides>
+      <li class="slide" data-active>
+        <Image src={We} alt="" />
+        <div class="content">
+          <h1>Empower Her, Empower the World</h1>
+          <h1>Strength in Sisterhood: Rise, Lead, Inspire</h1>
+          <div class="button">
+            <a class="btn" href="/donate">DONATE</a>
+            <a class="btn1" href="">DISCOVER</a>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <Image src={Cl} alt="" />
+        <div class="content">
+          <h1>Let Children Learn and Grow</h1>
+          <h1>Say No to Child Labor</h1>
+          <div class="button">
+            <a class="btn" href="/donate">DONATE</a>
+            <a class="btn1" href="">DISCOVER</a>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <Image src={Hc} alt="" />
+        <div class="content">
+          <h1>Wellness Begins with Care</h1>
+          <h1>Health for Every Journey</h1>
+          <div class="button">
+            <a class="btn" href="/donate">DONATE</a>
+            <a class="btn1" href="">DISCOVER</a>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <Image src={EducationImg} alt="" />
+        <div class="content">
+          <h1>Knowledge Unlocks Potential</h1>
+          <h1>Educate, Inspire, Transform</h1>
+          <div class="button">
+            <a class="btn" href="/donate">DONATE</a>
+            <a class="btn1" href="">DISCOVER</a>
+          </div>
+        </div>
+      </li>
+      <li class="slide">
+        <Image src={Fl} alt="" />
+        <div class="content">
+          <h1>Nourishing Lives, One Bite at a Time</h1>
+          <h1>Savor the Goodness, Feed the Soul</h1>
+          <div class="button">
+            <a class="btn" href="/donate">DONATE</a>
+            <a class="btn1" href="">DISCOVER</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .carousel {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 2;
+    /* width: 700px; */
+  }
+  .content h1:nth-child(1) {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  .content h1:nth-child(2) {
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.5)
+    ); /* Adjust the gradient colors and opacity as needed */
+    z-index: 1; /* Place the gradient above the image but below the content */
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  .slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+
+  .carousel-button {
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    padding: 0 0.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .carousel-button:hover,
+  .carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .carousel-button:focus {
+    outline: 1px solid black;
+  }
+
+  .carousel-button.prev {
+    left: 1rem;
+  }
+
+  .carousel-button.next {
+    right: 1rem;
+  }
+  .btn {
+    padding: 0.9rem 2rem;
+    background-color: var(--yellow);
+    color: var(--green);
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition:
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out;
+    width: 100%;
+    z-index: 1000;
+    transition:
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out,
+      border 0.5s ease-in-out;
+  }
+  .btn1 {
+    padding: 0.9rem 2rem;
+    /* background-color: yellow; */
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition:
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out,
+      border 0.5s ease-in-out;
+
+    width: 100%;
+    z-index: 1000;
+  }
+  .btn:hover {
+    background-color: transparent;
+    color: var(--yellow);
+    border: 1px solid var(--yellow);
+  }
+  .btn1:hover {
+    background-color: var(--green);
+    color: var(--yellow);
+    border: none;
+  }
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem 0 0 0;
+  }
+
+  @media (max-width: 700px) {
+    .carousel-button.prev,
+    .carousel-button.next {
+      position: absolute;
+      top: unset; /* Remove the top positioning */
+      bottom: 1rem; /* Position the buttons at the bottom */
+      transform: translateY(0); /* Reset the vertical positioning */
+    }
+
+    /* Adjust specific positioning for the prev and next buttons if needed */
+    .carousel-button.prev {
+      left: 1rem;
+    }
+
+    .carousel-button.next {
+      right: 1rem;
+    }
+  }
+  @media (max-width: 350px) {
+    .button {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<script is:inline>
+  const buttons = document.querySelectorAll("[data-carousel-button]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const offset = button.dataset.carouselButton === "next" ? 1 : -1;
+      const slides = button
+        .closest("[data-carousel]")
+        .querySelector("[data-slides]");
+
+      const activeSlide = slides.querySelector("[data-active]");
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+      if (newIndex < 0) newIndex = slides.children.length - 1;
+      if (newIndex >= slides.children.length) newIndex = 0;
+
+      slides.children[newIndex].dataset.active = true;
+      delete activeSlide.dataset.active;
+    });
+  });
+</script>

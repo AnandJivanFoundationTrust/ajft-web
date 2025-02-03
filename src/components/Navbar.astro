@@ -1,0 +1,269 @@
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/cropped-logo.png";
+---
+
+<nav class="navbar">
+  <div class="content">
+    <div class="logo">
+      <div class="logo-image">
+        <a href="/"><Image class="" src={Logo} alt="" /></a>
+      </div>
+      <div class="logo-title">
+        <a class="name" href="/">Anand Jivan Foundation Trust</a>
+        <div><a class="moto" href="/">Let's Make Better Life</a></div>
+      </div>
+    </div>
+    <ul class="menu-list">
+      <div class="icon cancel-btn">
+        <i class="fas fa-times"></i>
+      </div>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/contact">Contact</a></li>
+
+      <li><a href="/volunteer">Volunteer</a></li>
+
+      <li>
+        <a style="padding: .9rem 2rem;" class="btn" href="/donate">Donate</a>
+      </li>
+    </ul>
+    <div class="icon menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .content {
+    max-width: 1450px;
+    margin: auto;
+    padding: 0 30px;
+  }
+  .navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    /* padding: 25px 0; */
+    transition: all 0.3s ease;
+    background-color: transparent;
+    /* border-bottom: 0.5px solid #ffd700; */
+    padding: 0.5rem 0;
+    z-index: 10000;
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    backdrop-filter: blur(10px); /* Adjust the blur effect */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease; /* Add a transition effect */
+  }
+  .logo-image {
+    height: 100px;
+    width: 100px;
+  }
+  .logo-image a img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: "center";
+    gap: 1rem;
+  }
+  .logo p {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .name {
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  .moto {
+    color: rgb(222, 219, 219);
+  }
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .navbar .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  /* .navbar .logo a {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+  } */
+  .navbar .menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-list li a {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0 1.5rem;
+  }
+  ul.menu-list li:last-child {
+    /* Your styles for the last li element here */
+    font-weight: bold; /* For example */
+  }
+  .menu-list li a:hover {
+    color: yellow;
+  }
+
+  .icon {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .menu-list .cancel-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
+  .btn {
+    padding: 0.9rem 2rem;
+    background-color: #fbd45a;
+    color: var(--green) !important;
+    font-weight: bold !important;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition:
+      background-color 0.5s ease-in-out,
+      color 0.5s ease-in-out;
+    margin: 1rem;
+    border-radius: 30px;
+  }
+
+  @media (max-width: 1230px) {
+    .content {
+      padding: 0 60px;
+    }
+  }
+  @media (max-width: 1100px) {
+    .content {
+      padding: 0 40px;
+    }
+  }
+  @media (max-width: 900px) {
+    .content {
+      padding: 0 30px;
+    }
+  }
+  @media (max-width: 868px) {
+    body.disabled {
+      overflow: hidden;
+    }
+    .popup {
+      width: 80%;
+    }
+    .icon {
+      display: block;
+    }
+    .icon.hide {
+      display: none;
+    }
+    .navbar .menu-list {
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      max-width: 400px;
+      left: -100%;
+      top: 0px;
+      display: block;
+      padding: 40px 0;
+      text-align: center;
+      background: #222;
+      transition: all 0.3s ease;
+    }
+    .navbar.show .menu-list {
+      left: 0%;
+    }
+    .navbar .menu-list li {
+      margin-top: 45px;
+    }
+    .navbar .menu-list li a {
+      font-size: 23px;
+      margin-left: -100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .navbar.show .menu-list li a {
+      margin-left: 0px;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .navbar .logo a {
+      font-size: 27px;
+    }
+    .popup {
+      width: 80%;
+    }
+    .logo-title {
+      display: none;
+    }
+    .logo-image {
+      height: 50px;
+      width: auto;
+    }
+  }
+</style>
+<script is:inline>
+  const body = document.querySelector("body");
+  const navbar = document.querySelector(".navbar");
+  const menuBtn = document.querySelector(".menu-btn");
+  const cancelBtn = document.querySelector(".cancel-btn");
+
+  menuBtn.onclick = () => {
+    navbar.classList.add("show");
+    menuBtn.classList.add("hide");
+    body.classList.add("disabled");
+  };
+
+  cancelBtn.onclick = () => {
+    body.classList.remove("disabled");
+    navbar.classList.remove("show");
+    menuBtn.classList.remove("hide");
+  };
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 0) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  });
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      // Remove 'active' class from all menu items
+      menuItems.forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      // Add 'active' class to the clicked menu item
+      this.classList.add("active");
+    });
+  });
+</script>

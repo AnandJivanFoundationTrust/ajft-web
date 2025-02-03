@@ -1,0 +1,138 @@
+---
+import { Image } from "astro:assets";
+interface cardPorps {
+  name: string;
+  work: string;
+  title?: string;
+  content: string;
+  imagePath: any;
+  Heading?: string;
+}
+const { name, work, title, content, imagePath, heading } = Astro.props;
+---
+
+<div class='container'>
+  <div class='card-container'>
+    <div class='card-content'>
+      <p class='title'>{title}</p>
+      <p class='description'>{content}</p>
+    </div>
+
+    <div class='card-image'>
+      <p>{heading}</p>
+      <Image src={imagePath} alt='' />
+    </div>
+  </div>
+</div>
+
+<style>
+  .container {
+    max-width: 1450px;
+    margin: 0 auto;
+  }
+  .card-container {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    box-shadow: 0 7px 30px -25px #000;
+    border-radius: 16px;
+    background-color: white;
+    min-height: 400px;
+    height: 500px;
+    overflow: hidden;
+  }
+
+  .card-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+  }
+
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: rgb(255, 255, 255);
+    padding: 2rem 0;
+    margin: 0 2rem;
+  }
+
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .description {
+    color: #202d41;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  .read-more {
+    display: flex;
+    flex-direction: column;
+    color: #202d41;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .read-more span:nth-child(2) {
+    color: #79818d;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  @media (max-width: 1100px) {
+    .card-container {
+      gap: 25px;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .card-content {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    img {
+      height: 300;
+      max-width: auto;
+    }
+  }
+  @media (max-width: 900px) {
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .title {
+      font-size: var(--fs-b1);
+      font-weight: var(--fw-m);
+      color: var(--primary-font-color-a1);
+    }
+    .card-container {
+      flex-direction: column-reverse;
+      padding: 1rem;
+      height: fit-content;
+    }
+    .card-image {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .card-image p {
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+</style>

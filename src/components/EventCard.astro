@@ -1,0 +1,131 @@
+---
+import { Image } from "astro:assets";
+import Bg from "../assets/bg.jpg";
+import ClockIcon from "../assets/clock.svg";
+import LocationIcon from "../assets/location.svg";
+import Events from "../pages/events.astro";
+
+interface Props {
+  Time: string;
+  Date: string;
+  Event: string;
+  ImagePath: any;
+  Location: string;
+}
+
+const { Event, Time, Date, ImagePath, Location } = Astro.props;
+---
+
+<div class="eventcard">
+  <div class="bg-gradient"></div>
+  <Image src={ImagePath} alt="" />
+  <div class="time">
+    <p>{Date}</p>
+  </div>
+
+  <div class="details">
+    <div class="time-loc">
+      <div class="item">
+        <i class="fa-solid fa-clock"></i>
+        <p>{Time}</p>
+      </div>
+      <div class="item">
+        <i class="fa-solid fa-location-dot"></i>
+        <p>{Location}</p>
+      </div>
+    </div>
+    <div class="event">
+      <p>{Event}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .eventcard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .bg-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    );
+    z-index: 1;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .img-icon {
+    height: 24px;
+    width: 24px;
+    overflow: hidden;
+  }
+
+  .time {
+    position: absolute;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    font-weight: bold;
+    background-color: var(--yellow);
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  .details {
+    bottom: 20px;
+    left: 20px;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    color: white;
+  }
+  .time-loc {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 3rem;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  i {
+    color: var(--yellow);
+  }
+  .event p {
+    font-size: 42px;
+    text-align: left;
+    font-weight: 800;
+    width: 95%;
+  }
+  @media (max-width: 700px) {
+    .event p {
+      font-size: 22px;
+    }
+    .details {
+      padding: 0;
+    }
+    .time-loc {
+      font-size: 16px;
+    }
+  }
+</style>

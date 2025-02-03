@@ -1,0 +1,313 @@
+---
+import Zipper from "../components/Zipper.astro";
+import Header from "../layouts/Header.astro";
+import VolunteerImg from "../assets/volunteer.jpg";
+import { Image } from "astro:assets";
+import SliderMain from "../components/SliderMain.astro";
+import SliderVoulunteer from "../components/SliderVoulunteer.astro";
+---
+
+<Header route='Volunteer'>
+  <main>
+    <div class='container'>
+      <div class='item image-con'>
+        <Image src={VolunteerImg} alt='' />
+      </div>
+    </div>
+
+    <div class='section2'>
+      <div>
+        <div class='details'>
+          <span>Anand Jivan Foundation Trust</span>
+          <h1>Requirements</h1>
+          <p>
+            You can also contribute to our mission of aiding the less fortunate
+            by joining our Foundation as a volunteer. Your involvement could
+            include educating children, assisting in distribution camps,
+            supporting hospitals, and engaging in various activities for
+            underprivileged and special needs groups in society. The primary
+            qualifications needed for this role are your time, a few skills, and
+            dedication to the cause.
+          </p>
+        </div>
+      </div>
+      <form
+        action='https://formspree.io/f/xeqbneqj'
+        method='POST'
+        id='volunteer-form'
+        class='styled-form'
+      >
+        <div class='input-container'>
+          <div class='input-box'>
+            <label for='name'>Full Name:</label>
+            <input name='Name' id='name' type='text' placeholder='John Doe' />
+          </div>
+          <div class='input-box'>
+            <label for='phone'>Mobile:</label>
+            <input
+              name='Phone'
+              id='phone'
+              type='number'
+              placeholder='1234567890'
+            />
+          </div>
+        </div>
+        <div class='input-container'>
+          <div class='input-box'>
+            <label for='email'>Email:</label>
+            <input
+              name='Email'
+              id='email'
+              type='email'
+              placeholder='youremail@gmail.com'
+            />
+          </div>
+          <div class='input-box'>
+            <label for='qualification'>Qualification:</label>
+            <input
+              name='Qualification'
+              id='qualification'
+              placeholder='B.Sc. Data Science'
+              type='text'
+            />
+          </div>
+        </div>
+        <div class='input-container'>
+          <div class='input-box'>
+            <label for='datepicker'>Date of Birth:</label>
+            <input type='date' id='datepicker' name='Date' />
+          </div>
+          <div class='input-box'>
+            <label for='gender'>Select your gender:</label>
+            <select id='gender'>
+              <option value='male'>Male</option>
+              <option value='female'>Female</option>
+              <option value='other'>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class='input-container'>
+          <div class='input-box'>
+            <label for='occupation'>Occupation:</label>
+            <input
+              name='Occupation'
+              id='occupation'
+              placeholder='Manager'
+              type='text'
+            />
+          </div>
+          <div class='input-box'>
+            <label for='address'>Address:</label>
+            <input
+              name='Address'
+              type='text'
+              id='address'
+              placeholder='32 , cross road'
+            />
+          </div>
+        </div>
+        <div class='input-container'>
+          <div class='input-box'>
+            <label for='message'>Message:</label>
+            <textarea
+              class='text-area'
+              placeholder='custom message'
+              name='Message'
+              id='message'></textarea>
+          </div>
+        </div>
+
+        <button type='submit'>Submit</button>
+      </form>
+    </div>
+  </main>
+  <SliderVoulunteer />
+</Header>
+<style>
+  main {
+    min-height: 100vh;
+    background-image: url(../assets/bg-6.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 3rem;
+  }
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    padding: 3rem 2rem;
+  }
+  .item {
+    flex: 1;
+  }
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 2rem;
+  }
+  .image-con {
+    height: 400px;
+    width: auto;
+    border-radius: 0 0 200px 0;
+    overflow: hidden;
+  }
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  .details p {
+    font-size: 22px;
+    font-weight: bold;
+    width: 550px;
+  }
+  .details span {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--yellow);
+  }
+  .details h1 {
+    color: var(--green);
+  }
+  .section2 {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+  }
+  form {
+    flex: 1;
+
+    padding: 1rem;
+  }
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gap: 3rem; */
+  }
+  .input-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  /* General styles for the form */
+  .styled-form {
+    font-family: Arial, sans-serif;
+    max-width: 720px;
+    margin: 0 auto;
+    /* background-color: var(--lightgreen2); */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  /* Styles for input container */
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Styles for input box */
+  .input-box {
+    flex: 1 1 45%;
+  }
+
+  /* Styles for labels */
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  /* Styles for inputs */
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    background-color: #f5f5f5;
+    color: #555;
+    resize: none;
+    outline: none;
+  }
+  input:hover,
+  section:hover,
+  textarea:hover {
+    border: 1px solid var(--yellow);
+    /* Add any other hover styles you want for these elements */
+  }
+  .text-area {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #555;
+    font-size: 16px; /* Adjust the font size as needed */
+    resize: none; /* This property allows vertical resizing of the textarea */
+    outline: none;
+  }
+
+  /* Styles for submit button */
+  button {
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--yellow);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 50%;
+  }
+
+  button:hover {
+    background-color: var(--green);
+  }
+
+  @media (max-width: 780px) {
+    .container {
+      flex-direction: column-reverse;
+      width: 100%;
+      padding: 0rem;
+    }
+    .details {
+      padding: 1rem;
+    }
+    .details p {
+      width: 100%;
+      font-size: 18px;
+    }
+    .image-con {
+      height: auto;
+      width: 100%;
+      border-radius: 0;
+    }
+    main {
+      padding: 0;
+    }
+    .section2 {
+      flex-direction: column;
+    }
+    .input-container {
+      flex-direction: column;
+    }
+    .styled-form {
+      max-width: 100%;
+      margin: 1rem 0.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import EducationImage from "../assets/e-2.jpg";
+---
+
+<main>
+  <div class="container">
+    <div class="image">
+      <Image src={EducationImage} alt="" />
+    </div>
+    <div class="description">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In cumque
+        optio, eveniet soluta nam odio dicta architecto aperiam illo id veniam
+        nihil quae veritatis itaque tenetur modi nisi doloremque est aliquam!
+        Cum repudiandae harum alias pariatur praesentium excepturi magnam. Sunt
+        amet omnis officia itaque neque tempore tempora laudantium eligendi eos
+        dolorum, ratione quae, eaque laboriosam quod nulla repellat id officiis
+        ea! Quis minima perspiciatis officiis voluptates consectetur blanditiis
+        aliquam adipisci modi ab non quae ullam commodi expedita, maiores totam
+        consequuntur animi suscipit vitae neque harum ipsum illum reprehenderit!
+        Sed aut odit sapiente, quasi saepe placeat? Repellendus eligendi tempore
+        nulla magni.
+      </p>
+    </div>
+  </div>
+</main>
+
+<style>
+  main {
+    background-color: var(--lightgreen2);
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1rem;
+  }
+  .image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 0 0 150px 0;
+  }
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .description {
+    padding: 2rem;
+  }
+  .description p {
+    font-size: 20px;
+    font-weight: 300;
+  }
+</style>

@@ -1,0 +1,334 @@
+---
+import { Image } from "astro:assets";
+import whatsapp from "../assets/whatsapp.svg";
+import Header from "../layouts/Header.astro";
+---
+
+<Header route="Contact">
+  <div class="body" id="contact">
+    <section>
+      <div class="section-header">
+        <div class="container">
+          <h2>Connect with us</h2>
+          <p class="desc">
+            We're here to assist you with any questions, or general inquiries
+            you may have. Feel free to reach out to us using the contact form
+            below or via the provided contact details.
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-home"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Address</h4>
+                <p>
+                  Mabbi Bealuna ,<br /> Bihar- INDIA, <br />846005
+                </p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Phone</h4>
+                <p>+91 9155751363</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i
+                  ><Image
+                    class="whatsapp"
+                    src={whatsapp}
+                    alt=""
+                    height={40}
+                    width={40}
+                  /></i
+                >
+              </div>
+
+              <div class="contact-info-content">
+                <h4>WhatsApp</h4>
+                <p>+91 1234567890</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+
+              <div class="contact-info-content">
+                <h4>Email</h4>
+                <p>info@ajftrust.org</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form
+              action="https://formspree.io/f/xeqbneqj"
+              method="POST"
+              id="contact-form"
+            >
+              <h2 class="contact-form-title">Send Message</h2>
+              <div class="input-box">
+                <label for="name">Full Name:</label>
+                <input type="text" required="true" name="name" id="name" />
+              </div>
+
+              <div class="input-box">
+                <label for="number">Phone Number:</label>
+                <input type="number" required="true" name="number" />
+              </div>
+
+              <div class="input-box">
+                <label for="email">Email:</label>
+                <textarea required="true" name="email" id="email"></textarea>
+              </div>
+
+              <div class="input-box">
+                <label for="message">Message:</label>
+                <textarea required="true" name="message" id="message"
+                ></textarea>
+              </div>
+
+              <div class="input-box">
+                <input type="submit" value="Send" name="" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27220.21238564068!2d85.8734307347656!3d26.20824460000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39edb7a602a9ae31%3A0x4e6a6245083be13d!2sBelauna%2C%20Bihar%20847306!5e1!3m2!1sen!2sin!4v1703012197724!5m2!1sen!2sin"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</Header>
+
+<style>
+  .map {
+    height: 50vh;
+    background-color: #666;
+    overflow: hidden;
+  }
+
+  .body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../assets/contact.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.5)
+    );
+  }
+  .whatsapp {
+    margin: 15px;
+  }
+  section {
+    position: relative;
+    z-index: 3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .container {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .section-header {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .contact-form-title {
+    color: var(--h1-color);
+  }
+
+  .section-header h2 {
+    color: #fff;
+    font-weight: bold;
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .section-header p {
+    color: #fff;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .contact-info {
+    width: 50%;
+  }
+
+  .contact-info-item {
+    display: flex;
+    margin-bottom: 30px;
+  }
+
+  .contact-info-icon {
+    height: 70px;
+    width: 70px;
+    background-color: #fdecb2;
+    text-align: center;
+    border-radius: 50%;
+  }
+  .contact-info-icon:hover {
+    background-color: white;
+  }
+
+  .contact-info-icon i {
+    font-size: 30px;
+    line-height: 70px;
+  }
+
+  .contact-info-content {
+    margin-left: 20px;
+  }
+
+  .contact-info-content h4 {
+    color: var(--yellow);
+    font-size: 1.4em;
+    margin-bottom: 5px;
+  }
+
+  .contact-info-content p {
+    color: #fff;
+    font-size: 1em;
+  }
+
+  .contact-form {
+    background-color: #fff;
+    padding: 40px;
+    width: 45%;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  .contact-form h2 {
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--green);
+  }
+
+  .contact-form .input-box {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .contact-form .input-box input,
+  .contact-form .input-box textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+  }
+
+  .contact-form .input-box span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+  }
+
+  .contact-form .input-box input:focus ~ span,
+  .contact-form .input-box textarea:focus ~ span {
+    color: #e91e63;
+    font-size: 12px;
+    transform: translateY(-20px);
+  }
+
+  .contact-form .input-box input[type="submit"] {
+    width: 100%;
+    background: var(--green);
+    color: var(--white-color);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border: 1px solid var(--green);
+    transition: 0.5s;
+  }
+
+  .contact-form .input-box input[type="submit"]:hover {
+    background: #fff;
+    color: var(--green);
+  }
+  label {
+    color: var(--green);
+  }
+
+  @media (max-width: 991px) {
+    section {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+    .contact-info {
+      margin-bottom: 40px;
+      width: 100%;
+    }
+
+    .contact-form {
+      width: 100%;
+    }
+  }
+</style>

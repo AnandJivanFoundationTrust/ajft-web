@@ -1,0 +1,72 @@
+---
+import Navbar from "../components/Navbar.astro";
+
+import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+import FinalFooter from "../components/FinalFooter.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+import "../styles/global.scss";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/freeps2/a7rarpress@main/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/429c78efab.js"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/17f6642d7e.js"
+      crossorigin="anonymous"></script>
+
+    <title>{title}</title>
+    <!-- <ViewTransitions /> -->
+  </head>
+  <body>
+    <Navbar />
+
+    <slot />
+    <Footer />
+    <FinalFooter />
+    <script is:inline>
+      import Lenis from "@studio-freight/lenis";
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
